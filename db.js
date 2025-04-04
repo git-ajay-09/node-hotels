@@ -1,7 +1,16 @@
 const mongoose = require('mongoose')
-const mongoURL =  'mongodb://localhost:27017/HOTEL_BABA';
+require('dotenv').config();
+//const mongoURL =  process.env.MongoDBUrlocal;
+const mongoURL = process.env.MongoDBUrl;
 //SET UP THE MONGODB CONNECTION
-mongoose.connect(mongoURL)
+mongoose
+  .connect(mongoURL)
+  .then(() => {
+    console.log("MongoDB Connected");
+  })
+  .catch((err) => {
+    console.log("MongoDB connection error:", err);
+  });
 //retrieve the default connection object, which represents the actual connection between mongodb server and node js server
 
 const db = mongoose.connection; 
