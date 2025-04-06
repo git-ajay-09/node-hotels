@@ -10,7 +10,12 @@ const menuRoutes = require('./routes/menuRoutes')
 require('dotenv').config();
 
 
-app.get('/', (req, res) => {
+const logrequest =(req, res, next) =>{
+    console.log(`${new Date().toISOString()} Request Made to ${req.url}`)
+    next();
+}
+
+app.get('/', logrequest, (req, res) => {
     res.send('welcome to our hotel, how i can i help u?')
 })
 
