@@ -69,3 +69,5 @@ personSchema.methods.comparePassword = async function(candidatePassword){
 //create person model
 const Person = mongoose.model('Person', personSchema)
 module.exports = Person;
+
+//to mongoose fields ko kis basis pe check krta he , agar password ke basis pe krega to multiple documents ke same password bhi to ho skte he, aur id to ham use de bhi nhi rhe, to use kese pta chalega ki actually me is particular document ke liye check krna

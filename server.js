@@ -29,7 +29,7 @@ app.get('/',(req, res) => {
     res.send('welcome to our hotel, how i can i help u?')
 })
 
-app.use('/person',localauthmiddleware, personRoutes) //when you want to apply middleware on a specific routes
+app.use('/person', personRoutes) //when you want to apply middleware on a specific routes
 app.use('/menu', menuRoutes)
 const PORT = process.env.PORT || 3000;
 
